@@ -24,20 +24,23 @@ int main()
 
 
 	Three d(200, 4);
+	double a=d.alfa();
 
 	List_Three* list=new List_Three;
 	Three* derevo;
-	try {
-		for (int i = 0; i < 40; ++i)
+		for (int i = 0; i < 400; ++i)
 		{
-			derevo = new Three_nsp::Three(200);
+			derevo = new Three_nsp::Three(20);
 			list->push_back(derevo);
 		}
-	}
-	catch (char *str)
-	{
-		cout << *str;
-	}
+		double t = 0;
+		for (int i = 0; i < list->size(); ++i)
+		{
+			t += list->at(i)->expected_val();
+		}
+		double r = t / list->size();
+
+
 	cout << "ok"<<endl;
 	cout << "size= ";
 	for (int i = 0; i < list->size(); ++i)

@@ -115,7 +115,10 @@ namespace Three_nsp {
 		}
 	}
 
-
+	double Three::expected_val()const
+	{
+		return this->cnt_rand_val.expected_value();
+	}
 
 	Three::size_type Three::get_size()const
 	{
@@ -297,6 +300,14 @@ namespace Three_nsp {
 			throw "invalid number";
 			break;
 		}
+	}
+
+	double CountOfRandomValue::expected_value()const
+	{
+		double cnt_value = _zero + _one + _two + _three + _four;
+		double tmp = 1 * _one + 2 * _two + 3 * _three + 4 * _four;
+		double res = tmp / cnt_value;
+		return res;
 	}
 
 	void NumberofNodesatLevel::adding_node_to_lvl(int lvl)

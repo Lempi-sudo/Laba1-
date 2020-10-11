@@ -37,7 +37,7 @@ namespace Three_nsp {
 	public:
 
 		CountOfRandomValue():_zero(0) ,  _one(0) ,  _two(0),  _three(0) , _four (0) {}
-
+		double expected_value()const;
 		void adding_counter(int key);
 		int get_amount_of_random_number(int key)const;
 		
@@ -71,6 +71,7 @@ namespace Three_nsp {
 		int find_max_lvl()const;
 		double count_end_vertex()const;
 		double alfa()const;
+		double expected_val()const;
 		queue<Node*> create_new_queue(queue<Node*>& list_node);
 		
 	private:
