@@ -8,6 +8,7 @@ namespace Three_nsp {
 		head->number.second = 0;
 		head->lvl = 1;
 		nodes_in_lvl.adding_node_to_lvl(1);
+		
 
 	}
 
@@ -114,6 +115,8 @@ namespace Three_nsp {
 
 		}
 	}
+
+
 
 	double Three::expected_val()const
 	{

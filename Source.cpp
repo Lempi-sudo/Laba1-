@@ -47,8 +47,6 @@ int main()
 	setlocale(LC_ALL, "rus");
 
 
-
-
 	Three d(200, 4);
 	double a=d.alfa();
 
@@ -60,7 +58,8 @@ int main()
 			list->push_back(derevo);
 		}
 		double t = 0;
-	printStreamTable1(list);
+		list->input_file("res.txt");
+		printStreamTable1(list);
 	
 
 
