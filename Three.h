@@ -5,6 +5,8 @@
 #include <queue>
 #include <ctime>
 #include <utility>
+#include <fstream>
+#include <cassert>
 #include <cstdlib>
 using namespace std;
 
@@ -73,6 +75,8 @@ namespace Three_nsp {
 		double alfa()const;
 		double expected_val()const;
 		queue<Node*> create_new_queue(queue<Node*>& list_node);
+		void print_three_in_file(string)const;
+		void print_end_vertex(string )const;
 		
 	private:
 		Node* head;

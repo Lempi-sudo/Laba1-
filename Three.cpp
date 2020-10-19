@@ -273,7 +273,82 @@ namespace Three_nsp {
 		return count;
 	}
 
+	void Three::print_end_vertex(string filename)const {
 
+		ofstream outfile;
+		outfile.open(filename);
+		assert(outfile);
+		Node* tmp = head;
+		queue<Node*> list_node;
+		list_node.push(tmp);
+		int ns = 0;
+		while (!list_node.empty())
+		{
+			Node* t = list_node.front();
+			for (int i = 0; i < t->arr.size(); i++)
+			{
+				list_node.push(t->arr[i]);
+			}
+			if (list_node.front()->arr.empty())
+			{
+				if (ns % 6 == 0)
+				{
+					ns = 0;
+					outfile << endl;
+
+				}
+				ns++;
+
+
+				outfile << "  [ ¹" << list_node.front()->number.first << " #" << list_node.front()->number.second << " ]  ";
+			}
+			list_node.pop();
+		}
+		outfile.close();
+
+	}
+
+	void Three::print_three_in_file(string filename)const
+	{
+		ofstream outfile;
+		outfile.open(filename);
+		assert(outfile);
+
+		queue<Node*> list_node;
+		Node* p = head;
+		list_node.push(p);
+		int old_lvl = list_node.front()->lvl;
+		int nextst = 0;
+		outfile << "lvl " << old_lvl << ":   ";
+		while (!list_node.empty())
+		{
+			
+			int new_lvl = list_node.front()->lvl;
+			if (old_lvl != new_lvl)
+			{
+				nextst = 0;
+				outfile << endl;
+				outfile << "lvl " << new_lvl << ":   ";
+				old_lvl = new_lvl;
+			}
+			nextst++;
+			if (nextst % 6 == 0)
+			{
+				outfile << endl;
+			}
+			outfile << "  [ ¹" << list_node.front()->number.first << " #" << list_node.front()->number.second << " ]  ";
+
+			Node* t = list_node.front();
+			for (int i = 0; i < t->arr.size(); i++)
+			{
+				list_node.push(t->arr[i]);
+			}
+			list_node.pop();
+		}
+
+		outfile.close();
+
+	}
 
 	void CountOfRandomValue::adding_counter(int key)
 	{

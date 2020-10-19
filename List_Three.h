@@ -12,7 +12,7 @@ namespace Three_nsp {
 	{
 	public:
 		double midlle_Alfa() const;
-		void input_file(string filename)const;
+		void input_file_table(string filename)const;
 	
 	};
 
@@ -27,7 +27,7 @@ namespace Three_nsp {
 		return midlle_Alfa;
 	}
 
-	void List_Three::input_file(string filename)const
+	void List_Three::input_file_table(string filename)const
 	{
 		ofstream outfile;
 		outfile.open(filename);
@@ -43,4 +43,6 @@ namespace Three_nsp {
 		outfile.close();
 
 	}
+
+
 }
