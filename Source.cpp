@@ -47,26 +47,20 @@ int main()
 	setlocale(LC_ALL, "rus");
 
 
-	Three d(200, 4);
-	double a=d.alfa();
 
-	/*List_Three* list=new List_Three;
+
+	List_Three* list=new List_Three;
 	Three* derevo;
-		for (int i = 0; i < 400; ++i)
+		for (int i = 1; i < 400; ++i)
 		{
-			derevo = new Three_nsp::Three(200);
-			derevo->print_three_in_file("three.txt");
+			derevo = new Three_nsp::Three(i);
 			list->push_back(derevo);
 		}
 		double t = 0;
-		*/
-	Three* derevo;
-	derevo = new Three_nsp::Three(200);
-	derevo->print_three_in_file("three.txt");
-	derevo->print_end_vertex("end.txt");
-	cout<<"alfa:"<<derevo->alfa()<<endl;
-	cout <<"count_end_vertex:"<< derevo->count_end_vertex()<<endl;
-	cout <<"size:"<< derevo->get_size()<<endl;
+		
+		list->input_file_table("table.txt");
+
+
 
 
 

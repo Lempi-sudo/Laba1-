@@ -30,19 +30,17 @@ namespace Three_nsp {
 	void List_Three::input_file_table(string filename)const
 	{
 		ofstream outfile;
-		outfile.open(filename);
+		outfile.open(filename ,std::fstream::app);
 		assert(outfile);
-
-		outfile << "¹\t" << "size\t" << "end_vertex\t" << "Alfa\n";
+		outfile << endl;
+		outfile << "¹\t" << "size\t" << "end_vertex\t" <<"count_lvl\t"<< "Alfa\n"<<endl;
 		//enum { nr = 10 };
 		for (int i = 0; i < this->size(); i++) {
-			outfile << i+1<<"\t" << this->at(i)->get_size() << "\t" << this->at(i)->count_end_vertex() << "\t" <<fixed<< this->at(i)->alfa() << "\n";
+			outfile << i+1<<"\t" << this->at(i)->get_size() << "\t" << this->at(i)->count_end_vertex() << "\t"<<this->at(i)->count_lvl() << "\t" <<fixed<< this->at(i)->alfa() << "\n";
 		}
 		cout << "FILE RECORDED";
 
 		outfile.close();
 
 	}
-
-
 }

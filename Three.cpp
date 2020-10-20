@@ -272,6 +272,11 @@ namespace Three_nsp {
 		}
 		return count;
 	}
+	
+	int Three::count_lvl()const
+	{
+		return	this->nodes_in_lvl.get_high_lvl();
+	}
 
 	void Three::print_end_vertex(string filename)const {
 
@@ -386,6 +391,11 @@ namespace Three_nsp {
 		double tmp = 1 * _one + 2 * _two + 3 * _three + 4 * _four;
 		double res = tmp / cnt_value;
 		return res;
+	}
+
+	int NumberofNodesatLevel::get_high_lvl()const
+	{
+		return this->_high_lvl;
 	}
 
 	void NumberofNodesatLevel::adding_node_to_lvl(int lvl)

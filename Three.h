@@ -10,6 +10,7 @@
 #include <cstdlib>
 using namespace std;
 
+//Узел в графе
 namespace Three_nsp {
 
 	struct Node
@@ -19,7 +20,7 @@ namespace Three_nsp {
 		std::pair<int, int>number;
 
 	};
-
+// Вспомогательный класс для подсчета излов на  уровне 
 	class NumberofNodesatLevel {
 	public:
 		NumberofNodesatLevel():_high_lvl(0){}
@@ -28,12 +29,14 @@ namespace Three_nsp {
 		
 		int get_amount_of_nodes_in_lvl(int lvl)const { return _array_of_number_nodes[lvl - 1]; }
 
+		int get_high_lvl()const;
+
 	private:
 		int _high_lvl;
 		std::vector<int> _array_of_number_nodes;
 	};
 
-
+// Вспомогательный класс для подсчета случайных значений числа m
 	class CountOfRandomValue
 	{
 	public:
@@ -50,12 +53,6 @@ namespace Three_nsp {
 		int _three;
 		int	_four;
 	};
-
-
-
-
-
-
 
 	class Three
 	{
@@ -77,6 +74,7 @@ namespace Three_nsp {
 		queue<Node*> create_new_queue(queue<Node*>& list_node);
 		void print_three_in_file(string)const;
 		void print_end_vertex(string )const;
+		int count_lvl()const;
 		
 	private:
 		Node* head;
@@ -84,5 +82,4 @@ namespace Three_nsp {
 		CountOfRandomValue cnt_rand_val;
 		size_type cnt_node;
 	};
-
 }
