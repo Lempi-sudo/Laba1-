@@ -13,6 +13,7 @@ namespace Three_nsp {
 	public:
 		double midlle_Alfa() const;
 		void input_file_table(string filename)const;
+		~List_Three();
 	
 	};
 
@@ -41,6 +42,18 @@ namespace Three_nsp {
 		cout << "FILE RECORDED";
 
 		outfile.close();
+
+	}
+
+	List_Three::~List_Three()
+	{
+		cout << "~list_three"<<endl;
+		for (int i = 0; i < this->size(); ++i)
+		{
+
+			delete this->at(i);
+			cout << "~three" << endl;
+		}
 
 	}
 }

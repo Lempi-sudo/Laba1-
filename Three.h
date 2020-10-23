@@ -31,6 +31,7 @@ namespace Three_nsp {
 
 		int get_high_lvl()const;
 
+
 	private:
 		int _high_lvl;
 		std::vector<int> _array_of_number_nodes;
@@ -61,7 +62,6 @@ namespace Three_nsp {
 		Three();
 		Three(size_type N);
 		Three(size_type N, int link);
-		~Three() {};
 		size_type get_size()const;
 		void printTree3()const;
 		Node* create_Node(int value, int parent, int l);
@@ -75,6 +75,7 @@ namespace Three_nsp {
 		void print_three_in_file(string)const;
 		void print_end_vertex(string )const;
 		int count_lvl()const;
+		~Three();
 		
 	private:
 		Node* head;

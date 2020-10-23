@@ -431,6 +431,24 @@ namespace Three_nsp {
 		return new_list_node;
 	}
 
+	Three::~Three()
+	{
+		Node* tmp = head;
+		queue<Node*> list_node;
+		list_node.push(tmp);
+		while (!list_node.empty())
+		{
+			Node* t = list_node.front();
+			for (int i = 0; i < t->arr.size(); i++)
+			{
+				list_node.push(t->arr[i]);
+			}
+			list_node.front()->arr.clear();
+			delete list_node.front();
+			list_node.pop();
+			
+		}
 
+	}
 
 }

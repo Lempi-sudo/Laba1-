@@ -46,25 +46,19 @@ int main()
 	srand(time(NULL));
 	setlocale(LC_ALL, "rus");
 
+	{
 
 
-
-	List_Three* list=new List_Three;
-	Three* derevo;
-		for (int i = 1; i < 400; ++i)
+		List_Three list;
+		Three* derevo;
+		for (int i = 1; i < 1000; ++i)
 		{
-			derevo = new Three_nsp::Three(i);
-			list->push_back(derevo);
+			
+			derevo = new Three_nsp::Three(1000);
+			list.push_back(derevo);
+
 		}
-		double t = 0;
-		
-		list->input_file_table("table.txt");
-
-
-
-
-
-	
+	}
 
 	return 0;
 
